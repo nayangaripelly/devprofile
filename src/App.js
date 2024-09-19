@@ -1,25 +1,89 @@
-import logo from './logo.svg';
-import './App.css';
+const roommate = [
+  {
+    Name: "Sai Nayan",
+    photo: "photo/nayan.jpg",
+    intro:
+      "I am a 5th semester BTech student with a strong interest in web development and competitive programming. I have experience working with React.js and am focused on frontend development, while also expanding my knowledge in backend development and machine learning.",
+    skills: ["HTML", "CSS", "Javascript", "ReactJS", "c++", "DSA"],
+  },
+  {
+    Name: "Sai Nayan",
+    photo: "photo/nayan.jpg",
+    intro:
+      "I am a 5th semester BTech student with a strong interest in web development and competitive programming. I have experience working with React.js and am focused on frontend development, while also expanding my knowledge in backend development and machine learning.",
+    skills: ["HTML", "CSS", "Javascript", "ReactJS", "c++", "DSA"],
+  },
+  {
+    Name: "Sai Nayan",
+    photo: "photo/nayan.jpg",
+    intro:
+      "I am a 5th semester BTech student with a strong interest in web development and competitive programming. I have experience working with React.js and am focused on frontend development, while also expanding my knowledge in backend development and machine learning.",
+    skills: ["HTML", "CSS", "Javascript", "ReactJS", "c++", "DSA"],
+  },
+  {
+    Name: "Sai Nayan",
+    photo: "photo/nayan.jpg",
+    intro:
+      "I am a 5th semester BTech student with a strong interest in web development and competitive programming. I have experience working with React.js and am focused on frontend development, while also expanding my knowledge in backend development and machine learning.",
+    skills: ["HTML", "CSS", "Javascript", "ReactJS", "c++", "DSA"],
+  },
+];
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="card">
+      <Avatar />
+      <Data />
     </div>
   );
 }
 
-export default App;
+function Avatar() {
+  return (
+    <div className="avatar">
+      <img src="photos/nayan.jpg" alt="nayan" />
+    </div>
+  );
+}
+
+function Data() {
+  return (
+    <div className="data">
+      <Intro />
+      <Skillset />
+    </div>
+  );
+}
+
+function Intro() {
+  return (
+    <div>
+      <h1>SAI NAYAN</h1>
+      <p>
+        I am a 5th semester BTech student with a strong interest in web
+        development and competitive programming. I have experience working with
+        React.js and am focused on frontend development, while also expanding my
+        knowledge in backend development and machine learning.
+      </p>
+    </div>
+  );
+}
+function Skillset() {
+  return (
+    <ul className="skill-list">
+      {roommate[0].skills.map((skill) => (
+        <Skill skill={skill} color="red" />
+      ))}
+    </ul>
+  );
+}
+
+function Skill({ skill, color }) {
+  return (
+    <div className="skill">
+      <p>
+        <span>{skill}</span>
+      </p>
+    </div>
+  );
+}
